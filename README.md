@@ -39,3 +39,37 @@ Given the app is open
 When the User navigates to view event details
 Then the app should display charts illustrating patterns, trends, and key insights related to events
 And this should enhance the User's understanding and decision-making capabilities
+
+## Serverless Functions
+
+The Meet app leverages serverless functions to enhance its performance, scalability, and cost-effectiveness. These functions are responsible for handling specific tasks without the need for maintaining a dedicated backend server. Here's how serverless functions are utilized in the Meet app:
+
+### 1. Event Data Retrieval
+
+To ensure real-time and up-to-date event information, serverless functions are employed to fetch event data from a scalable and always-available source. This allows the app to provide users with the latest information without the need for backend maintenance.
+
+### 2. Filtering Events
+
+When a user selects a specific city to filter events, a serverless function is triggered to dynamically fetch and display only the events relevant to the selected city. This ensures a seamless and responsive user experience.
+
+### 3. Offline Support
+
+Serverless functions enable the Meet app to function offline by caching essential data. In offline mode, users can still access the app, view previously retrieved event information, and make informed decisions even without an active internet connection.
+
+### 4. Scalability and Cost Efficiency
+
+The serverless architecture employed in the Meet app ensures easy scalability, allowing the application to handle varying loads effortlessly. Moreover, the pay-as-you-go model minimizes costs, as serverless functions eliminate the need for continuous backend server maintenance.
+
+### 5. Instant Loading and Responsive Design
+
+By utilizing serverless functions, the app achieves instant loading times, ensuring users can access event information quickly. Additionally, the responsive design is enhanced, providing a seamless experience across various devices and screen sizes.
+
+### 6. Test-Driven Development (TDD) Approach
+
+The Meet app adopts a Test-Driven Development (TDD) approach, where tests are written before implementing functionalities. This ensures that each feature meets its requirements and maintains high code quality. Serverless functions are tested rigorously to guarantee reliable and consistent performance.
+
+### 7. Data Visualization
+
+Serverless functions play a crucial role in retrieving and processing data for visualization. The charts illustrating event location distribution (scatterplot) and event genre popularity (pie chart) are powered by serverless functions, enhancing the visual appeal of the app and aiding users in drawing meaningful conclusions from the data.
+
+#### By combining serverless architecture with Progressive Web App (PWA) features, the Meet app not only delivers a robust and scalable solution but also provides users with an engaging and responsive event management experience.
