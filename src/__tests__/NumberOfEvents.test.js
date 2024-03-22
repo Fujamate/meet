@@ -1,34 +1,30 @@
 import { render } from "@testing-library/react";
-import { getEvents } from "../api";
-import NumberOfEvents from "../components/NumberOfEvents";
 import userEvent from "@testing-library/user-event";
+import NumberOfEvents from "../components/NumberOfEvents";
 
 describe("<NumberOfEvents /> component", () => {
   let NumberOfEventsComponent;
   beforeEach(() => {
-    const setErrorAlert = jest.fn();
-
-    NumberOfEventsComponent = render(
-      <NumberOfEvents
-        setNumberOfEvents={() => {}}
-        setErrorAlert={setErrorAlert}
-      />
-    );
+    NumberOfEventsComponent = render(<NumberOfEvents />);
   });
 
-  test('got an element with "textbox" role', () => {
-    expect(NumberOfEventsComponent.queryByRole("textbox")).toBeInTheDocument();
+  test("renders number of events text input", () => {
+    const numberTextBox = NumberOfEventsComponent.queryByRole("textbox");
+    expect(numberTextBox).toBeInTheDocument();
+    expect(numberTextBox).toHaveClass("number-of-events-input");
   });
 
-  test("default value is 32", () => {
-    expect(NumberOfEventsComponent.queryByRole("textbox")).toHaveValue("32");
+  test("default number is 32", async () => {
+    const numberTextBox = NumberOfEventsComponent.queryByRole("textbox");
+    expect(numberTextBox).toHaveValue("32");
   });
 
-  test("update numberOfEvents when user types and should be 10", async () => {
-    const numberOfEvents = NumberOfEventsComponent.queryByRole("textbox");
+  test("number of events text box value changes when the user types in it", async () => {
     const user = userEvent.setup();
-    await user.type(numberOfEvents, "{backspace}{backspace}10");
-    expect(numberOfEvents).toHaveValue("10");
-    expect(setErrorAlert).toHaveBeenCalledWith("");
+    const numberTextBox = NumberOfEventsComponent.queryByRole("textbox");
+    await user.type(numberTextBox, "123");
+
+    // 32 (the default value already written) + 123
+    expect(numberTextBox).toHaveValue("32123");
   });
 });
