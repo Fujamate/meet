@@ -52,6 +52,8 @@
   },
   "devDependencies": {
     "eslint-plugin-jest": "^27.9.0",
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.0.0",
+    "jest-cucumber": "^4.0.4",
+    "puppeteer": "^22.6.1"
   }
 }
