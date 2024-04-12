@@ -1,4 +1,4 @@
-import React, { PureComponent, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
 const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
@@ -8,12 +8,12 @@ const EventGenresChart = ({ events }) => {
 
   useEffect(() => {
     const data = genres.map((genre) => {
-      const filteredGenres = events.filter((event) =>
+      const filteredEvents = events.filter((event) =>
         event.summary.includes(genre)
       );
       return {
         name: genre,
-        value: filteredGenres.length,
+        value: filteredEvents.length,
       };
     });
 
