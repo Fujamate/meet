@@ -116,9 +116,21 @@ input[type="number"] {
   z-index: 1000;
 }
 
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px 0px 15px 0px;
+}
+
 @media screen and (min-width: 720px) {
   body {
     margin: auto;
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
   }
 }
