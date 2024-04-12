@@ -19,7 +19,6 @@ const CityEventsChart = ({ allLocations, events }) => {
       ).length;
       const city = location.split(/, | - /)[0];
       return { city, count };
-      console.log(allLocations);
     });
 
     setData(data);
